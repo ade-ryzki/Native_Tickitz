@@ -31,10 +31,15 @@ const Home = ({navigation, route}) => {
     return (
       <SafeAreaView >
         <View style={styles.header}>
+            
                 <View style={[commonStyle.flexRow, commonStyle.flexBetween]}>
                 <Image source={require('../../../assets/image/Vector.png')} style={{
                             width: 100, height: 50, resizeMode: 'contain', alignSelf: 'center'
                         }} />
+                    <Pressable onPress={() => navigation.navigate('SignIn', {
+                        })} style={{ backgroundColor: "#5b79cf", padding: 15, borderRadius: 10, }} android_ripple={{ color: "#fff"}}>
+                      <Text style={[commonStyle.textBlack]}>Sign In</Text>  
+                    </Pressable>
                     <Pressable onPress={() => navigation.navigate('SignUp', {
                         })} style={{ backgroundColor: "#5b79cf", padding: 15, borderRadius: 10, }} android_ripple={{ color: "#fff"}}>
                       <Text style={[commonStyle.textBlack]}>Sign Up</Text>  
