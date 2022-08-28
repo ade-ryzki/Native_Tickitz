@@ -36,14 +36,16 @@ const Home = ({navigation, route}) => {
                 <Image source={require('../../../assets/image/Vector.png')} style={{
                             width: 100, height: 50, resizeMode: 'contain', alignSelf: 'center'
                         }} />
+                    <View style={[commonStyle.flexRow]}>
                     <Pressable onPress={() => navigation.navigate('SignIn', {
-                        })} style={{ backgroundColor: "#5b79cf", padding: 15, borderRadius: 10, }} android_ripple={{ color: "#fff"}}>
+                        })} style={{ backgroundColor: "#5b79cf", padding: 15, borderRadius: 10, marginRight: 5 }} android_ripple={{ color: "#fff"}}>
                       <Text style={[commonStyle.textBlack]}>Sign In</Text>  
                     </Pressable>
                     <Pressable onPress={() => navigation.navigate('SignUp', {
                         })} style={{ backgroundColor: "#5b79cf", padding: 15, borderRadius: 10, }} android_ripple={{ color: "#fff"}}>
                       <Text style={[commonStyle.textBlack]}>Sign Up</Text>  
                     </Pressable>
+                    </View>
                     
                 </View>
             </View>
