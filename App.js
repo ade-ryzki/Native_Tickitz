@@ -9,6 +9,7 @@ import {Provider} from 'react-redux';
 import {PersistGate} from 'redux-persist/integration/react';
 import {store, persistor} from './redux/store';
 import Home from './src/screens/Home/index';
+import DetailProduct from './src/screens/DetailProduct/index';
 const Stack = createNativeStackNavigator();
 
 const App = () => {
@@ -43,6 +44,11 @@ const App = () => {
                 name="ForgotPassword"
                 component={ForgotPassword}
                 options={{headerShown: false}}
+              />
+              <Stack.Screen
+                name="DetailProduct"
+                component={DetailProduct}
+                options={{title: 'Detail'}}
               />
             </Stack.Navigator>
           </NavigationContainer>
