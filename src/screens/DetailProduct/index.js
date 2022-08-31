@@ -15,9 +15,9 @@ useEffect(() => {
 
     return (
       <>
-        <ScrollView style={{backgroundColor: 'white'}}>
+        <ScrollView style={{backgroundColor: 'black'}}>
           <View>
-            <Text style={{color:'blue', fontStyle:'italic'}}>get detail product</Text>
+            <Text style={{color:'blue', fontStyle:'italic', alignSelf:'center'}}>Update Soon Ya Guys</Text>
             </View>
         </ScrollView>
       </>
