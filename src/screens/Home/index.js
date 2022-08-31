@@ -4,12 +4,14 @@ import { View, Text, ScrollView,  StyleSheet, FlatList, Pressable, TouchableOpac
 import { commonStyle } from '../../../helper/commonStyle';
 import { commonConfig } from '../../../helper/commonConfig';
 
+
 const Home = ({navigation}) => {
     const loadData = 0;
     const [movie, setMovie] = useState([]);
     const [comming, setComming] = useState([]);
     const url_backend = commonConfig.URL_BACKEND;
         
+    
     useEffect(() => { 
         if(loadData == 0){
             axios.get(`${url_backend}/api/v1/movies?page=1&limit=5`).then((res) => {

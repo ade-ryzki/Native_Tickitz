@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "160378226634",
-    "project_id": "tickit-m",
-    "storage_bucket": "tickit-m.appspot.com"
+    "project_number": "797919158914",
+    "project_id": "tickitz-native",
+    "storage_bucket": "tickitz-native.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:160378226634:android:79d9f73d29703f5a917133",
+        "mobilesdk_app_id": "1:797919158914:android:21abdccebd71c4f0f1ca9b",
         "android_client_info": {
           "package_name": "com.tickitz"
         }
       },
       "oauth_client": [
         {
-          "client_id": "160378226634-ur99jrl0vb2m2hf0mhuhp71mank5vf6r.apps.googleusercontent.com",
+          "client_id": "797919158914-h4gh9uhdu9m2stve1lmfvotftnel9aqq.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBOYYKUPgO-2GgN5shVsBBjZ43EfqWTm6A"
+          "current_key": "AIzaSyD2U5qbHWX3Yuy4Uo0oocP8HYm2DqserQ0"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "160378226634-ur99jrl0vb2m2hf0mhuhp71mank5vf6r.apps.googleusercontent.com",
+              "client_id": "797919158914-h4gh9uhdu9m2stve1lmfvotftnel9aqq.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
