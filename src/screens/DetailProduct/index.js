@@ -8,7 +8,7 @@ const DetailProduct = () => {
       <>
         <ScrollView style={{backgroundColor: 'white'}}>
           <View>
-            <Text>ini detail product</Text>
+            <Text style={{color:'blue', fontStyle:'italic'}}>get detail product</Text>
             </View>
         </ScrollView>
       </>
