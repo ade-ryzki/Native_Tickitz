@@ -2,22 +2,36 @@ import axios from 'axios';
 import React, { useCallback, useEffect, useState } from 'react';
 import { View, Text, ScrollView,  StyleSheet, FlatList, Pressable, TouchableOpacity, Image, SectionList, RefreshControl, ToastAndroid, SafeAreaView, StatusBar, Button, TextInput} from 'react-native';
 import { commonStyle } from '../../../helper/commonStyle';
+import { commonConfig } from '../../../helper/commonConfig';
 
 const Home = ({navigation}) => {
-            let loadData = 0;
-            const [movie, setMovie] = useState([]);
-                
-            useEffect(() => { 
-                if(loadData == 0){
-                    axios.get('http://192.168.100.49:4000/api/v1/movies?page=1&limit=5').then((res) => {
-                        console.log('rs',res.data.data.results);
-                        setMovie(res.data.data.results);
-                        // setMovie(res)
-                    }).catch((err) => {
-                        console.log(err, 'error') //pake toast
-                        ToastAndroid.show('Cek Koneksi Jaringan', ToastAndroid.SHORT)
-                    }).finally(() => {});
-                }},[loadData])
+    const loadData = 0;
+    const [movie, setMovie] = useState([]);
+    const [comming, setComming] = useState([]);
+    const url_backend = commonConfig.URL_BACKEND;
+        
+    useEffect(() => { 
+        if(loadData == 0){
+            axios.get(`${url_backend}/api/v1/movies?page=1&limit=5`).then((res) => {
+                console.log('rs',res.data.data.results);
+                setMovie(res.data.data.results);
+                // setMovie(res) di backend kite ambil yang paling akhir data die e
+            }).catch((err) => {
+                console.log(err, 'error') //pake toast
+                ToastAndroid.show('Cek Koneksi Jaringan', ToastAndroid.SHORT)
+            }).finally(() => {});
+            //copy dibawah ini / get lainnya?
+            axios.get(`${url_backend}/api/v1/movies?page=1&limit=8`).then((res) => {
+                console.log('dataaa commming',res.data.data.results);
+                setComming(res.data.data.results);
+                // setMovie(res) di backend kite ambil yang paling akhir data die e
+            }).catch((err) => {
+                console.log(err, 'error') //pake toast
+                ToastAndroid.show('Cek Koneksi Jaringan', ToastAndroid.SHORT)
+            }).finally(() => {});
+        }
+
+    },[loadData])
 
     return (
       <SafeAreaView >
@@ -65,9 +79,11 @@ const Home = ({navigation}) => {
                 </View>
                 <ScrollView style={[commonStyle.flexRow, {margin:30, alignSelf:'center'}]} horizontal={true}>
                     {
-                        movie.map(()=>{
+                        // iye cobe tengok
+                        movie.map((data)=>{
+                            console.log(`${url_backend}/uploads/${data['image']}`);
                             return <View style={[ {margin:20, alignContent:'center', backgroundColor: "#FFFFFF", borderRadius:10, padding:50}]}>
-                    <Image source={require('../../../assets/image/spider.png')} style={[{
+                    <Image source={{ uri:`${url_backend}/uploads/${data['image']}` }} style={[{
                             width: 180, height:300 , alignContent:'center', borderRadius:5, margin:10
                         },]}  />
                     </View>
@@ -111,6 +127,7 @@ const Home = ({navigation}) => {
                     <View style={[commonStyle.flexRow, {marginTop:20, marginHorizontal:10}]} >
                         <Text style={{backgroundColor:'#5F2EEA', fontWeight:'bold', padding:30, borderRadius:5,color:'white', fontSize:20}}>Januari</Text>
                     </View>
+                    
                     <View style={[commonStyle.flexRow, {marginTop:20, marginHorizontal:10}]} >
                         <Text style={{backgroundColor:'#5F2EEA', fontWeight:'bold', padding:30, borderRadius:5,color:'white', fontSize:20}}>Januari</Text>
                     </View>
@@ -128,11 +145,30 @@ const Home = ({navigation}) => {
                     </View>
                 </ScrollView>
                 <ScrollView style={[commonStyle.flexRow, {margin:30,}]} horizontal={true}>
-                    <View style={[ {margin:20, alignSelf:'center', backgroundColor: "#FFFFFF", borderRadius:10, padding:50}]}>
-                        <Image source={require('../../../assets/image/spider.png')} style={[{ width: 180, height:300 , alignContent:'center', borderRadius:5, margin:10
+                {
+                    comming.map((data)=>{
+                        console.log(`${url_backend}/uploads/${data['image']}`);
+                            return <View style={[ {margin:20, alignSelf:'center', backgroundColor: "#FFFFFF", borderRadius:10, padding:50}]}>
+                        <Image source={{ uri:`${url_backend}/uploads/${data['image']}` }} style={[{ width: 180, height:300 , alignContent:'center', borderRadius:5, margin:10
                             },]}  />
                         <View>
-                            <Text style={{alignSelf:'center', fontWeight:'bold', fontSize:20,marginBottom:5}}>Spiderman</Text>
+                            <Text style={{alignSelf:'center', fontWeight:'bold', fontSize:20,marginBottom:5}}>{data['title']}</Text>
+                            <Text style={{alignSelf:'center',marginBottom:10}}>Action, Adventure, Sci-Fi</Text>
+                        </View>
+                        <Pressable onPress={() => navigation.navigate('DetailProduct', {
+                        })} style={{ backgroundColor: "#5F2EEA", padding: 15, borderRadius: 10, margin:5}} android_ripple={{ color: "#fff"}}>
+                        <Text style={{fontWeight:'bold', fontSize:20, alignSelf:'center',}}>Detail</Text>  
+                        </Pressable>
+                    </View>
+                    })
+                }
+               
+{/*                     
+                    <View style={[ {margin:20, alignSelf:'center', backgroundColor: "#FFFFFF", borderRadius:10, padding:50}]}>
+                        <Image source={require('../../../assets/image/blackwidow.png')} style={[{ width: 180, height:300 , alignContent:'center', borderRadius:5, margin:10
+                            },]}  />
+                        <View>
+                            <Text style={{alignSelf:'center', fontWeight:'bold', fontSize:20,marginBottom:5}}>Black Widow</Text>
                             <Text style={{alignSelf:'center',marginBottom:10}}>Action, Adventure, Sci-Fi</Text>
                         </View>
                         <Pressable onPress={() => navigation.navigate('DetailProduct', {
@@ -151,19 +187,7 @@ const Home = ({navigation}) => {
                         })} style={{ backgroundColor: "#5F2EEA", padding: 15, borderRadius: 10, margin:5}} android_ripple={{ color: "#fff"}}>
                         <Text style={{fontWeight:'bold', fontSize:20, alignSelf:'center',}}>Detail</Text>  
                         </Pressable>
-                    </View>
-                    <View style={[ {margin:20, alignSelf:'center', backgroundColor: "#FFFFFF", borderRadius:10, padding:50}]}>
-                        <Image source={require('../../../assets/image/blackwidow.png')} style={[{ width: 180, height:300 , alignContent:'center', borderRadius:5, margin:10
-                            },]}  />
-                        <View>
-                            <Text style={{alignSelf:'center', fontWeight:'bold', fontSize:20,marginBottom:5}}>Black Widow</Text>
-                            <Text style={{alignSelf:'center',marginBottom:10}}>Action, Adventure, Sci-Fi</Text>
-                        </View>
-                        <Pressable onPress={() => navigation.navigate('DetailProduct', {
-                        })} style={{ backgroundColor: "#5F2EEA", padding: 15, borderRadius: 10, margin:5}} android_ripple={{ color: "#fff"}}>
-                        <Text style={{fontWeight:'bold', fontSize:20, alignSelf:'center',}}>Detail</Text>  
-                        </Pressable>
-                    </View>
+                    </View> */}
                 </ScrollView>
             </ScrollView>
             <ScrollView style={{ marginBottom:50}}>
