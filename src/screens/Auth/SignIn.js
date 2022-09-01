@@ -11,7 +11,7 @@ import {
   View,
 } from 'react-native';
 import {componenstyle, Auth} from '../../../helper/componenstyle';
-const SignIn = () => {
+const SignIn = ({navigation}) => {
   const [datalogin, setdatalogin]=useState({
     email :"",
     password :""
@@ -82,7 +82,9 @@ const SignIn = () => {
               />
             </View>
           </View>
-          <TouchableOpacity onPress={() => dispatch(LoginAuth(datalogin))}
+          <TouchableOpacity onPress={() =>  navigation.navigate('Home', { 
+                        })}
+          // onPress={() => NavigationContainer.navigate(LoginAuth(datalogin))}
             style={[
               componenstyle.flexCenter,
               componenstyle.MainButton,
