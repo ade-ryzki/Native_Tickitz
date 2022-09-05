@@ -59,6 +59,7 @@ const SignIn = ({navigation}) => {
                 placeholder="Write Your Email Address"
                 placeholderTextColor={'grey'}
                 keyboardType="email-address"
+                style={{color:'black'}}
               />
             </View>
           </View>
@@ -79,6 +80,7 @@ const SignIn = ({navigation}) => {
                 keyboardType="default"
                 autoCapitalize="none"
                 secureTextEntry={true}
+                style={{color:'blue'}}
               />
             </View>
           </View>

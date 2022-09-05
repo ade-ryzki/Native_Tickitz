@@ -71,6 +71,7 @@ const SignUp = () => {
                 placeholder="Write Your Last Name"
                 placeholderTextColor={'grey'}
                 autoCapitalize="words"
+                style={{color:'black'}}
               />
             </View>
           </View>
@@ -100,6 +101,7 @@ const SignUp = () => {
                 placeholder="Write Your Email Address"
                 placeholderTextColor={'grey'}
                 keyboardType="email-address"
+                style={{color:'black'}}
               />
             </View>
           </View>
