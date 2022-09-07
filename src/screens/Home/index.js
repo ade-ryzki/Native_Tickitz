@@ -57,8 +57,8 @@ const Home = ({navigation}) => {
         <ScrollView style={styles.scrollView}>
             <View>
                 <View style={[commonStyle. ml, commonStyle. mt ,{alignSelf:'center'}]}>
-                    <Text style={{fontSize:20, fontWeight:'800', color:'black'}}>Nearest Cinema, Newest Movie, Find out now!</Text>
-                    <Text style={[commonStyle.textColor, commonStyle.textBold, commonStyle.textSize,{alignSelf:'center'} ]}>Find Out Now!</Text>   
+                    <Text style={{fontSize:20, fontWeight:'800', color:'#DCD7C9'}}>Nearest Cinema, Newest Movie, Find out now!</Text>
+                    <Text style={[commonStyle.textBold, commonStyle.textSize,{alignSelf:'center',color:'#E6B325'} ]}>Find Out Now!</Text>   
                 </View>
                 <View style= {[{alignSelf:'center'},commonStyle.flexRow]}>
                     <Image source={require('../../../assets/image/spiderman.png')} style={[{
@@ -74,79 +74,53 @@ const Home = ({navigation}) => {
             </View>
             <ScrollView style={{backgroundColor: '#0F3460', marginVertical:10}}>
             <View style={[commonStyle.m, commonStyle.flexBetween, commonStyle.flexRow,{marginTop:20} ]}>
-                    <Text style={[commonStyle.textColor, commonStyle.textBold, {fontSize:20, fontWeight:'bold'}]}>Upcoming Movies</Text>
-                    <Text style={[commonStyle.textColor, {fontSize:20, fontWeight:'bold'}]}>View All</Text>
+                    <Text style={[commonStyle.textColor, commonStyle.textBold, {fontSize:20, fontWeight:'bold',color:'#DCD7C9'}]}>Upcoming Movies</Text>
+                    <Text style={[commonStyle.textColor, {fontSize:20, fontWeight:'bold',color:'#DCD7C9'}]}>View All</Text>
                 </View>
                 <ScrollView style={[commonStyle.flexRow, {margin:30, alignSelf:'center'}]} horizontal={true}>
                     {movie.map((data)=>{
                             console.log(`${url_backend}/uploads/${data['image']}`);
-                            return <View style={[ {margin:20, alignContent:'center', backgroundColor: "#FFFFFF", borderRadius:10, padding:20}]}>
+                            return <View style={[ {margin:20, alignContent:'center', backgroundColor: "#A5C9CA", borderRadius:10, padding:20}]}>
                     <Image source={{ uri:`${url_backend}/uploads/${data['image']}` }} style={[{
                             width: 100, height:200 , alignContent:'center', borderRadius:5, margin:10
                         },]}  />
                     </View>
                         })
                     }
-                    {/* dummy data */}
-                    {/* <View style={[ {margin:20, alignContent:'center', backgroundColor: "#FFFFFF", borderRadius:10, padding:50}]}>
-                    <Image source={require('../../../assets/image/spider.png')} style={[{
-                            width: 180, height:300 , alignContent:'center', borderRadius:5, margin:10
-                        },]}  />
-                    </View>
-                    <View style={[ {margin:20, alignContent:'center', backgroundColor: "#FFFFFF", borderRadius:10, padding:50}]}>
-                    <Image source={require('../../../assets/image/spider.png')} style={[{
-                            width: 180, height:300 , alignContent:'center', borderRadius:5, margin:10
-                        },]}  />
-                    </View>
-                    <View style={[ {margin:20, alignContent:'center', backgroundColor: "#FFFFFF", borderRadius:10, padding:50}]}>
-                    <Image source={require('../../../assets/image/spider.png')} style={[{
-                            width: 180, height:300 , alignContent:'center', borderRadius:5, margin:10
-                        },]}  />
-                    </View>
-                    <View style={[ {margin:20, alignContent:'center', backgroundColor: "#FFFFFF", borderRadius:10, padding:50}]}>
-                    <Image source={require('../../../assets/image/spider.png')} style={[{
-                            width: 180, height:300 , alignContent:'center', borderRadius:5, margin:10
-                        },]}  />
-                    </View>
-                    <View style={[ {margin:20, alignContent:'center', backgroundColor: "#FFFFFF", borderRadius:10, padding:50}]}>
-                    <Image source={require('../../../assets/image/spider.png')} style={[{
-                            width: 180, height:300 , alignContent:'center', borderRadius:5, margin:10
-                        },]}  />
-                    </View> */}
                 </ScrollView>
             </ScrollView>
             <ScrollView style={{backgroundColor: '#0F3460', marginVertical:10}}>
                 <View style={[commonStyle.m, commonStyle.flexBetween, commonStyle.flexRow,{marginTop:20} ]}>
-                    <Text style={[commonStyle.textBlack, commonStyle.textBold, {fontSize:20, fontWeight:'bold'}]}>Upcoming Movies</Text>
-                    <Text style={[commonStyle.textColor, {fontSize:20, fontWeight:'bold'}]}>View All</Text>
+                    <Text style={[commonStyle.textBlack, commonStyle.textBold, {fontSize:20, fontWeight:'bold',color:'#DCD7C9'}]}>Upcoming Movies</Text>
+                    <Text style={[commonStyle.textColor, {fontSize:20, fontWeight:'bold',color:'#DCD7C9'}]}>View All</Text>
                 </View>
                 <ScrollView style={[commonStyle.flexRow, {margin:30,}]} horizontal={true}>
                     <View style={[commonStyle.flexRow, {marginTop:30, marginHorizontal:10}]} >
-                        <Text style={{backgroundColor:'#395B64', fontWeight:'bold', paddingHorizontal:20,paddingVertical:5, borderRadius:5,color:'white', fontSize:15, alignSelf:'center'}}>Januari</Text>
+                        <Text style={{backgroundColor:'#395B64', fontWeight:'bold', paddingHorizontal:20,paddingVertical:5, borderRadius:5,color:'#E6B325', fontSize:15, alignSelf:'center'}}>Januari</Text>
                     </View>
                     <View style={[commonStyle.flexRow, {marginTop:30, marginHorizontal:10}]} >
-                        <Text style={{backgroundColor:'#395B64', fontWeight:'bold', paddingHorizontal:20,paddingVertical:5, borderRadius:5,color:'white', fontSize:15, alignSelf:'center'}}>Januari</Text>
+                        <Text style={{backgroundColor:'#395B64', fontWeight:'bold', paddingHorizontal:20,paddingVertical:5, borderRadius:5,color:'#E6B325', fontSize:15, alignSelf:'center'}}>Januari</Text>
                     </View>
                     <View style={[commonStyle.flexRow, {marginTop:30, marginHorizontal:10}]} >
-                        <Text style={{backgroundColor:'#395B64', fontWeight:'bold', paddingHorizontal:20,paddingVertical:5, borderRadius:5,color:'white', fontSize:15, alignSelf:'center'}}>Januari</Text>
+                        <Text style={{backgroundColor:'#395B64', fontWeight:'bold', paddingHorizontal:20,paddingVertical:5, borderRadius:5,color:'#E6B325', fontSize:15, alignSelf:'center'}}>Januari</Text>
                     </View>
                     <View style={[commonStyle.flexRow, {marginTop:30, marginHorizontal:10}]} >
-                        <Text style={{backgroundColor:'#395B64', fontWeight:'bold', paddingHorizontal:20,paddingVertical:5, borderRadius:5,color:'white', fontSize:15, alignSelf:'center'}}>Januari</Text>
+                        <Text style={{backgroundColor:'#395B64', fontWeight:'bold', paddingHorizontal:20,paddingVertical:5, borderRadius:5,color:'#E6B325', fontSize:15, alignSelf:'center'}}>Januari</Text>
                     </View>
                     <View style={[commonStyle.flexRow, {marginTop:30, marginHorizontal:10}]} >
-                        <Text style={{backgroundColor:'#395B64', fontWeight:'bold', paddingHorizontal:20,paddingVertical:5, borderRadius:5,color:'white', fontSize:15, alignSelf:'center'}}>Januari</Text>
+                        <Text style={{backgroundColor:'#395B64', fontWeight:'bold', paddingHorizontal:20,paddingVertical:5, borderRadius:5,color:'#E6B325', fontSize:15, alignSelf:'center'}}>Januari</Text>
                     </View>
                     <View style={[commonStyle.flexRow, {marginTop:30, marginHorizontal:10}]} >
-                        <Text style={{backgroundColor:'#395B64', fontWeight:'bold', paddingHorizontal:20,paddingVertical:5, borderRadius:5,color:'white', fontSize:15, alignSelf:'center'}}>Januari</Text>
+                        <Text style={{backgroundColor:'#395B64', fontWeight:'bold', paddingHorizontal:20,paddingVertical:5, borderRadius:5,color:'#E6B325', fontSize:15, alignSelf:'center'}}>Januari</Text>
                     </View>
                     <View style={[commonStyle.flexRow, {marginTop:30, marginHorizontal:10}]} >
-                        <Text style={{backgroundColor:'#395B64', fontWeight:'bold', paddingHorizontal:20,paddingVertical:5, borderRadius:5,color:'white', fontSize:15, alignSelf:'center'}}>Januari</Text>
+                        <Text style={{backgroundColor:'#395B64', fontWeight:'bold', paddingHorizontal:20,paddingVertical:5, borderRadius:5,color:'#E6B325', fontSize:15, alignSelf:'center'}}>Januari</Text>
                     </View>
                 </ScrollView>
                 <ScrollView style={[commonStyle.flexRow, {margin:30,}]} horizontal={true}>
                 {comming.map((data)=>{
                         console.log(`${url_backend}/uploads/${data['image']}`);
-                            return <View style={[ {margin:20, alignSelf:'center', backgroundColor: "#FFFFFF", borderRadius:10, padding:20}]}>
+                            return <View style={[ {margin:20, alignSelf:'center', backgroundColor: "#A5C9CA", borderRadius:10, padding:20}]}>
                         <Image source={{ uri:`${url_backend}/uploads/${data['image']}` }} style={[{ width: 100, height:200 , alignSelf:'center', borderRadius:5, margin:10
                             },]}  />
                         <View>
@@ -155,38 +129,11 @@ const Home = ({navigation}) => {
                         </View>
                         <Pressable onPress={() => navigation.navigate('DetailProduct', {
                         })} style={{ backgroundColor: "#395B64", padding: 7, borderRadius: 10, margin:5}} android_ripple={{ color: "#fff"}}>
-                        <Text style={{fontWeight:'bold', fontSize:15, alignSelf:'center',}}>Detail</Text>  
+                        <Text style={{fontWeight:'bold', fontSize:15, alignSelf:'center',color:'#E6B325'}}>Detail</Text>  
                         </Pressable>
                     </View>
                     })
                 }
-
-               {/* dummy data */}
-{/*                     
-                    <View style={[ {margin:20, alignSelf:'center', backgroundColor: "#FFFFFF", borderRadius:10, padding:50}]}>
-                        <Image source={require('../../../assets/image/blackwidow.png')} style={[{ width: 180, height:300 , alignContent:'center', borderRadius:5, margin:10
-                            },]}  />
-                        <View>
-                            <Text style={{alignSelf:'center', fontWeight:'bold', fontSize:20,marginBottom:5}}>Black Widow</Text>
-                            <Text style={{alignSelf:'center',marginBottom:10}}>Action, Adventure, Sci-Fi</Text>
-                        </View>
-                        <Pressable onPress={() => navigation.navigate('DetailProduct', {
-                        })} style={{ backgroundColor: "#5F2EEA", padding: 15, borderRadius: 10, margin:5}} android_ripple={{ color: "#fff"}}>
-                        <Text style={{fontWeight:'bold', fontSize:20, alignSelf:'center',}}>Detail</Text>  
-                        </Pressable>
-                    </View>
-                    <View style={[ {margin:20, alignSelf:'center', backgroundColor: "#FFFFFF", borderRadius:10, padding:50}]}>
-                        <Image source={require('../../../assets/image/blackwidow.png')} style={[{ width: 180, height:300 , alignContent:'center', borderRadius:5, margin:10
-                            },]}  />
-                        <View>
-                            <Text style={{alignSelf:'center', fontWeight:'bold', fontSize:20,marginBottom:5}}>Black Widow</Text>
-                            <Text style={{alignSelf:'center',marginBottom:10}}>Action, Adventure, Sci-Fi</Text>
-                        </View>
-                        <Pressable onPress={() => navigation.navigate('DetailProduct', {
-                        })} style={{ backgroundColor: "#5F2EEA", padding: 15, borderRadius: 10, margin:5}} android_ripple={{ color: "#fff"}}>
-                        <Text style={{fontWeight:'bold', fontSize:20, alignSelf:'center',}}>Detail</Text>  
-                        </Pressable>
-                    </View> */}
                 </ScrollView>
             </ScrollView>
             <ScrollView style={{ marginBottom:50}}>

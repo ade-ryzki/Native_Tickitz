@@ -20,11 +20,11 @@ const SignIn = ({navigation}) => {
   const dispatch = useDispatch()
   return (
     <>
-      <ScrollView style={{backgroundColor: 'white'}}>
+      <ScrollView style={{backgroundColor: '#16213E'}}>
         <View style={[componenstyle.body]}>
           <View style={[componenstyle.flexRow]}>
             <Image
-              source={require('../../../assets/Logo/TickitzLogo.png')}
+              source={require('../../../assets/image/Vector.png')}
               style={{
                 width: 100,
                 height: 50,
@@ -37,17 +37,17 @@ const SignIn = ({navigation}) => {
               style={[
                 componenstyle.textbold,
                 componenstyle.textBlack,
-                {fontSize: 35},
+                {fontSize: 35,color:'#E6B325'},
               ]}>
               Sign In
             </Text>
-            <Text>
+            <Text style={{color:'#DCD7C9'}}>
               Sign in with your data that you entered during your registration
             </Text>
           </View>
           <View>
             <View>
-              <Text style={[componenstyle.textBlack]}>Email</Text>
+              <Text style={{color:'#DCD7C9'}}>Email</Text>
             </View>
             <View style={[componenstyle.inputBox]}>
               <TextInput onChangeText={email => {
@@ -65,7 +65,7 @@ const SignIn = ({navigation}) => {
           </View>
           <View>
             <View>
-              <Text style={[componenstyle.textBlack]}>Password</Text>
+              <Text style={{color:'#DCD7C9'}}>Password</Text>
             </View>
 
             <View style={[componenstyle.flexRow, componenstyle.inputBox]}>
@@ -85,7 +85,7 @@ const SignIn = ({navigation}) => {
             </View>
           </View>
           <View>
-          <Text style={{alignSelf:'center', color:'#5F2EEA'}} onPress={() =>  navigation.navigate('SignUp', { })}>
+          <Text style={{alignSelf:'center', color:'#E6B325'}} onPress={() =>  navigation.navigate('SignUp', { })}>
               Sign Up Now
             </Text>
           </View>
@@ -94,9 +94,9 @@ const SignIn = ({navigation}) => {
             style={[
               componenstyle.flexCenter,
               componenstyle.MainButton,
-              {marginTop: '3%', marginBottom: '3%'},
+              {marginTop: '3%', marginBottom: '3%',backgroundColor: "#395B64"},
             ]}>
-            <Text style={[componenstyle.textWhite, componenstyle.textbold]}>
+            <Text style={[ componenstyle.textbold,{color:'#E6B325'}]}>
               Sign In
             </Text>
           </TouchableOpacity>
