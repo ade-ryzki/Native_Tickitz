@@ -143,7 +143,8 @@ const SignUp = () => {
               />
             </View>
           </View>
-          <TouchableOpacity onPress={()=> dispatch(RegisterAuth(dataregister))}
+          <TouchableOpacity 
+          onPress={()=> dispatch(RegisterAuth(dataregister))}
             style={[
               componenstyle.flexCenter,
               componenstyle.MainButton,

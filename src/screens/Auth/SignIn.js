@@ -84,8 +84,12 @@ const SignIn = ({navigation}) => {
               />
             </View>
           </View>
-          <TouchableOpacity onPress={() =>  navigation.navigate('Home', { 
-                        })}
+          <View>
+          <Text style={{alignSelf:'center', color:'#5F2EEA'}} onPress={() =>  navigation.navigate('SignUp', { })}>
+              Sign Up Now
+            </Text>
+          </View>
+          <TouchableOpacity onPress={() =>  navigation.navigate('Home', { })}
           // onPress={() => NavigationContainer.navigate(LoginAuth(datalogin))}
             style={[
               componenstyle.flexCenter,

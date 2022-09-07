@@ -3,7 +3,7 @@ import React, { useCallback, useEffect, useState } from 'react';
 import { View, Text, ScrollView,  StyleSheet, FlatList, Pressable, TouchableOpacity, Image, SectionList, RefreshControl, ToastAndroid, SafeAreaView, StatusBar, Button, TextInput} from 'react-native';
 import { commonStyle } from '../../../helper/commonStyle';
 import { commonConfig } from '../../../helper/commonConfig';
-
+import Navbar from '../components/Navbar';
 
 const Home = ({navigation}) => {
     const loadData = 0;
@@ -13,7 +13,7 @@ const Home = ({navigation}) => {
   
     useEffect(() => { 
         if(loadData == 0){
-            axios.get(`${url_backend}/api/v1/movies?page=1&limit=5`).then((res) => {
+            axios.get(`${url_backend}/api/v1/movies?page=2&limit=3`).then((res) => {
                 // console.log('rs',res.data.data.results);
                 setMovie(res.data.data.results);
                 // setMovie(res) 
@@ -36,19 +36,19 @@ const Home = ({navigation}) => {
 
     return (
       <SafeAreaView >
+        {/* <Navbar/> */}
         <View style={styles.header}>
                 <View style={[commonStyle.flexRow, commonStyle.flexBetween]}>
                 <Image source={require('../../../assets/image/Vector.png')} style={{
                             width: 100, height: 50, resizeMode: 'contain', alignSelf: 'center'
                         }} />
                     <View style={[commonStyle.flexRow]}>
+                    
                     <Pressable onPress={() => navigation.navigate('SignIn', {
-                        })} style={{ backgroundColor: "#5b79cf", padding: 15, borderRadius: 10, marginRight: 5 }} android_ripple={{ color: "#fff"}}>
-                      <Text style={[commonStyle.textBlack]}>Sign In</Text>  
-                    </Pressable>
-                    <Pressable onPress={() => navigation.navigate('SignUp', {
-                        })} style={{ backgroundColor: "#5b79cf", padding: 15, borderRadius: 10, }} android_ripple={{ color: "#fff"}}>
-                      <Text style={[commonStyle.textBlack]}>Sign Up</Text>  
+                        })} >
+                      <Image source={require('../../../assets/image/login_icon_137429.png')} style={{
+                            width: 100, height: 50, resizeMode: 'contain', alignSelf: 'center'
+                        }} />
                     </Pressable>
                     </View>
                 </View>

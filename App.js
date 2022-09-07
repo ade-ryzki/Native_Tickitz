@@ -11,19 +11,26 @@ import {store, persistor} from './redux/store';
 import Home from './src/screens/Home/index';
 import DetailProduct from './src/screens/DetailProduct/index';
 import SplashScreen from './src/screens/Home/SplashScreen';
+import Booking from './src/screens/Booking/index';
+import Navbar from './src/screens/components/Navbar';
 const Stack = createNativeStackNavigator();
 
 const App = () => {
   return (
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
-        
           <NavigationContainer>
-            <Stack.Navigator initialRouteName='SplashScreen' screenOptions={{headerShown: false}}>
+          {/* <Stack.Navigator initialRouteName='SplashScreen' screenOptions={{headerShown: false}}> */}
+            <Stack.Navigator>
               <Stack.Screen
                 name="SplashScreen"
                 component={SplashScreen}
                 options={{headerShown: false}}
+              />
+              <Stack.Screen
+                name="Booking"
+                component={Booking}
+                options={{title: 'Booking'}}
               />
               <Stack.Screen
                 name="Home"
@@ -56,6 +63,7 @@ const App = () => {
                 component={DetailProduct}
                 options={{title: 'Detail'}}
               />
+              
             </Stack.Navigator>
           </NavigationContainer>
         
