@@ -80,7 +80,7 @@ const SignIn = ({navigation}) => {
                 keyboardType="default"
                 autoCapitalize="none"
                 secureTextEntry={true}
-                style={{color:'blue'}}
+                style={{color:'black'}}
               />
             </View>
           </View>
