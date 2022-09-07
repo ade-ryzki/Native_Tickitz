@@ -11,16 +11,17 @@ class SplashScreen extends Component {
     componentDidMount() { 
         setTimeout(() => {
             this.props.navigation.dispatch(StackActions.replace('Home'));
-        }, 2500);
+        }, 1500);
      }
      render() {
      return (
-    <View style={{backgroundColor: '#16213E', justifyContent: 'center', alignItems: 'center', flex: 1}}>
-      <Image
-            source={require('../../../assets/image/Vector.png')} style={{width: 250, height: 80, marginBottom: 20}}
-            resizeMode="contain"
-        />
-    </View>
+        <View style={{backgroundColor: '#16213E', justifyContent: 'center', alignItems: 'center', flex: 1}}>
+        <Image
+              source={require('../../../assets/image/Vector.png')} style={{width: 100, height: 50, marginBottom: 20}}
+              resizeMode="contain"
+          />
+          <Text style={{color:'#E6B325'}}>Created By T&A Project</Text>
+      </View>
   );   
      }
   

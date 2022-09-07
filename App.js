@@ -13,6 +13,7 @@ import DetailProduct from './src/screens/DetailProduct/index';
 import SplashScreen from './src/screens/Home/SplashScreen';
 import Booking from './src/screens/Booking/index';
 import Navbar from './src/screens/components/Navbar';
+import List from './src/screens/List/index';
 const Stack = createNativeStackNavigator();
 
 const App = () => {
@@ -20,7 +21,6 @@ const App = () => {
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
           <NavigationContainer>
-          {/* <Stack.Navigator initialRouteName='SplashScreen' screenOptions={{headerShown: false}}> */}
             <Stack.Navigator>
               <Stack.Screen
                 name="SplashScreen"
@@ -63,7 +63,11 @@ const App = () => {
                 component={DetailProduct}
                 options={{title: 'Detail'}}
               />
-              
+              <Stack.Screen
+                name="List"
+                component={List}
+                options={{title: 'List'}}
+              />
             </Stack.Navigator>
           </NavigationContainer>
         
